@@ -1,0 +1,57 @@
+Raw Data Observations at a Glance:
+
+-"INCIDENT_NUMBER" column is a useful indicator of incidents in which multiple firearms were recovered, since the data includes a new row for each with the same number.
+-Row 3 on the head has NaN values across many columns, as if no firearm was recovered from any suspect. Rows like these are not useful for exploratory data analysis regarding those metrics.
+-Curious if the "FIREARM_MANUFACTURER" column has any relation to the "TYPE_OF_FIREARM" column, as I intuitively know manufacturers often make most types of firearms.
+
+
+Value Counts Observations:
+
+UCR Category:
+-Out of 14852 total firearms, 11190 were recovered for Wpns Law Violation, Narcotics, and Aggravated Assault alone, in that order. Suicide is not as common a reason as I'd hypothesized, with just 419 firearms recovered.
+
+Type of Firearm:
+-Semi-Automatic Pistols are overwhelmingly the most common type of weapon recovered at 7978, with another 2262 added on if we include Revolvers into a simplified "Handgun" category.
+
+Firearm Manufacturer:
+-First bar of the plot with 1892 recovered firearms has no manufacturer. Look more closely to determine if these are NaN values, and drop for any analysis involving manufacturers.
+-Smith & Wesson, Hipoint, Glock Inc., Ruger, and Taurus Int. are the top 5 manufacturers, representing 5087 recovered firearms.
+-NOTE: Observed Smith & Wesson is represented with both the "&" and the word "and". Check unique entries, and combine values with similar discrepancies.
+
+Firearm Model:
+-6162 firearms have no model listed. The next most represented entry in the FIREARM_MODEL column is the Pistol: Model X at 208 recovered. greatly skewing what analysis I could do without removing the void entries first.
+-NOTE: Check unique values to ensure like entries are counted together.
+
+Firearm Caliber:
+-This is one of the most diverse columns yet, with just 3044 recovered firearms in 9mm, the most common caliber, well above the mean of 233 firearms per caliber.
+-Weapons with no specified caliber represent 1492 entries. Rename them to "Unknown".
+
+Recovery Date:
+-Unsurprisingly, in a dataset that spans 10 years, there's much variation in the precise date firearms were recovered. Analysis zoomed in to the day is of limited use.
+-Out of 14852 total firearms, just 135 were recovered on the most represented date, 6/20/2013. Notably, this is double the number of the next most represented date of 12/14/2016 at 65.
+-Consider zooming out to view recovery by month for each year should additional analysis be desired.
+
+City, State:
+-Unsurprisingly, the vast majority of firearms (almost all of them,) were recovered in Louisville and Kentucky.
+-Dropping this column entirely is probably best.
+
+Recovery Zipcode:
+-This data will be useful for creating a heatmap of Louisville KY later. It's difficult to read in its raw state.
+-NOTE: Work on creating a better chart to represent them.
+
+Person Recovered From Race:
+-7235 firearms were recovered from Blacks, followed by 4601 recovered from Whites.
+-Whites may optionally be merged with the 233 recovered from Hispanics, the next most represented group, since Hispanic/Latino is technically considered an ethnicity rather than a race.
+-Louisville's population in 2020 was 53.3% White, 32.6% Black, and 5.9% Hispanic.
+Source: https://www.censusdots.com/race/louisville-ky-demographics
+-The raw data indicates firearms were 1.57 times more likely to be recovered from Blacks than Whites, despite Blacks representing a smaller proportion of the overall population.
+
+Person Recovered From Sex:
+-11282 firearms were recovered from males, 893 from females. The remainder are unknown.
+-This indicates firearms were approximately 12.63 times more likely to be taken from males, despite males representing approximately half of the overall population.
+-NOTE: Drop the U and NaN entries, and present the chart with just Male and Female
+-Pie chart selected because of few categories, and a light blue and pink selected for the colors to help indicate Sex.
+
+Person Recovered From Age:
+-The chart indicates firearms were sharply more likely to be recovered from a person in their early 20s, peaking at 594 and 593 recovered from ages 23 and 22 respectively, before tapering off as age increases.
+-570 recovered from both ages 25 and 18, and 569 recovered from age 21 are also very high relative to the mean number recovered per age of 161.7, indicating a strong right skew of the data.
