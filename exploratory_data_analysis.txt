@@ -16,11 +16,9 @@ Type of Firearm:
 Firearm Manufacturer:
 -First bar of the plot with 1892 recovered firearms has no manufacturer. Look more closely to determine if these are NaN values, and drop for any analysis involving manufacturers.
 -Smith & Wesson, Hipoint, Glock Inc., Ruger, and Taurus Int. are the top 5 manufacturers, representing 5087 recovered firearms.
--NOTE: Observed Smith & Wesson is represented with both the "&" and the word "and". Check unique entries, and combine values with similar discrepancies.
 
 Firearm Model:
 -6162 firearms have no model listed. The next most represented entry in the FIREARM_MODEL column is the Pistol: Model X at 208 recovered. greatly skewing what analysis I could do without removing the void entries first.
--NOTE: Check unique values to ensure like entries are counted together.
 
 Firearm Caliber:
 -This is one of the most diverse columns yet, with just 3044 recovered firearms in 9mm, the most common caliber, well above the mean of 233 firearms per caliber.
@@ -37,7 +35,6 @@ City, State:
 
 Recovery Zipcode:
 -This data will be useful for creating a heatmap of Louisville KY later. It's difficult to read in its raw state.
--NOTE: Work on creating a better chart to represent them.
 
 Person Recovered From Race:
 -7235 firearms were recovered from Blacks, followed by 4601 recovered from Whites.
@@ -49,7 +46,6 @@ Source: https://www.censusdots.com/race/louisville-ky-demographics
 Person Recovered From Sex:
 -11282 firearms were recovered from males, 893 from females. The remainder are unknown.
 -This indicates firearms were approximately 12.63 times more likely to be taken from males, despite males representing approximately half of the overall population.
--NOTE: Drop the U and NaN entries, and present the chart with just Male and Female
 -Pie chart selected because of few categories, and a light blue and pink selected for the colors to help indicate Sex.
 
 Person Recovered From Age:
