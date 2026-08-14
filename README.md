@@ -10,3 +10,19 @@ It should go without saying that these files are necessary for the project to fu
     "Crime_Data_2016"
 in order for the Jupyter Notebook to read them.
 
+
+
+
+Instructions:
+1. Clone the repository from the public link:
+https://github.com/btrush01/Recovered_Firearms/tree/main
+
+2. Create a virtual environment, and activate it in your terminal.
+Windows Commands:
+python3 -m venv venv
+venv\Scripts\activate
+
+3. Install dependencies
+pip install -r requirements.txt
+
+4. "Exploratory_Data_Analysis.ipynb" is the only notebook you need to run. Everything possible was crammed into that one file for the time being. This project was created in Visual Studio Code, so that program would probably offer the best compatibility.
